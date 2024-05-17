@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardHeader, CardDescription, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardDescription, CardTitle, CardFooter, } from "@/components/ui/card";
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import {
   Pagination,
@@ -10,6 +10,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { Button } from './ui/button';
 
 function RepoList() {
   const [repos, setRepos] = useState([]);
@@ -57,18 +58,22 @@ function RepoList() {
           <TableHeader>
             <TableRow>
               <TableHead className="">ID</TableHead>
-              <TableHead className="">Repository</TableHead>
-              <TableHead>Visibility</TableHead>
+              <TableHead className="w-[200px]">Repository</TableHead>
+              <TableHead>Action</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {currentRepos.map(repo => (
               <TableRow key={repo.id}>
                 <TableCell className="">{repo.id}</TableCell>
-                <TableCell className="">
-                  <Link to={`/repos/${repo.owner.login}/${repo.name}`}>{repo.name}</Link>
+                <TableCell className="w-[220px]">
+                  {repo.name}
                 </TableCell>
-                <TableCell>{repo.visibility}</TableCell>
+                <TableCell>
+                  <Link to={`/repos/${repo.owner.login}/${repo.id}`}>
+                  <Button className="px-1 py-1 text-sm">View Details</Button>
+                  </Link>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>

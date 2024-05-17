@@ -1,15 +1,17 @@
 // App.js
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import RepoList from './components/RepoList';
 import RepoDetails from './components/RepoDetails';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<RepoList />} />
-        <Route path="/repo/:id" element={<RepoDetails />} />
-      </Routes>
+      <Switch>
+        <Route exact path="/" component={RepoList} />
+        <Route path="/repos/:owner/:repo" component={RepoDetails} />
+        <Route path="*" component={() => <div>404 Not Found</div>} />
+      </Switch>
     </Router>
   );
 }
