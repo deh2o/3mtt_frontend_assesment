@@ -66,11 +66,11 @@ function RepoList() {
             {currentRepos.map(repo => (
               <TableRow key={repo.id}>
                 <TableCell className="">{repo.id}</TableCell>
-                <TableCell className="w-[220px]">
+                <TableCell className="w-[20px]">
                   {repo.name}
                 </TableCell>
                 <TableCell>
-                  <Link to={`/repos/${repo.owner.login}/${repo.id}`}>
+                  <Link to={`/details/#${repo.id}`}>
                   <Button className="px-1 py-1 text-sm">View Details</Button>
                   </Link>
                 </TableCell>
