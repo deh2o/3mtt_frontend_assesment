@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from './ui/button';
 
 function RepoDetails() {
@@ -11,6 +11,18 @@ function RepoDetails() {
       .then(response => response.json())
       .then(data => setRepos(data));
   }, []);
+
+  const handleCreate = () => {
+    alert('Create functionality is not implemented yet.');
+  };
+
+  const handleUpdate = (repoId) => {
+    alert(`Update functionality for repo ID ${repoId} is not implemented yet.`);
+  };
+
+  const handleDelete = (repoId) => {
+    alert(`Delete functionality for repo ID ${repoId} is not implemented yet.`);
+  };
 
   return (
     <div className="flex justify-center items-center h-screen">
@@ -60,6 +72,11 @@ function RepoDetails() {
                   </tr>
                 </tbody>
               </table>
+              <div className='mt-8 mb-8 flex justify-center items-center space-x-8'>
+                <Button onClick={handleCreate}>Create</Button>
+                <Button variant="outline" onClick={() => handleUpdate(repo.id)}>Update</Button>
+                <Button variant="destructive" onClick={() => handleDelete(repo.id)}>Delete</Button>
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
