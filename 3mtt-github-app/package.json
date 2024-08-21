@@ -1,5 +1,50 @@
 {
   "name": "3mtt-github-app",
   "version": "0.1.0",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@react-aria/button": "^3.9.8",
+    "@react-aria/combobox": "^3.10.3",
+    "@react-aria/dialog": "^3.5.17",
+    "@react-aria/listbox": "^3.13.3",
+    "@react-aria/overlays": "^3.23.2",
+    "@react-aria/searchfield": "^3.7.8",
+    "@react-aria/tabs": "^3.9.5",
+    "@react-stately/tabs": "^3.6.9",
+    "@tailwindcss/forms": "^0.5.7",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1",
+    "react-scripts": "5.0.1",
+    "tailwindcss": "^3.4.10",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
