@@ -113,6 +113,7 @@ const RepoDetail = () => {
     </CardHeader>
     <CardBody>
         <Text>Description: {repo.description || 'No description'}</Text>
+        <Text>ID: {repo.id}</Text>
         <Text>Visibility: {repo.visibility}</Text>
         <Text>Branch: {repo.default_branch}</Text>
         <Text>Repo URL: {repo.url}</Text>

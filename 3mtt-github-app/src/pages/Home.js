@@ -75,14 +75,16 @@ const Home = () => {
       <Table variant="striped">
         <Thead>
           <Tr>
-            <Th>Name</Th>
-            <Th>Description</Th>
-            <Th>Actions</Th>
+            <Th>ID</Th>
+            <Th>NAME</Th>
+            <Th>DESCRIPTION</Th>
+            <Th>ACTIONS</Th>
           </Tr>
         </Thead>
         <Tbody>
           {filteredRepos.map((repo) => (
             <Tr key={repo.id}>
+                <Td>{repo.id}</Td>
               <Td>{repo.name}</Td>
               <Td>{repo.description || 'No description'}</Td>
               <Td>
